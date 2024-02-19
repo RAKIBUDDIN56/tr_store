@@ -10,12 +10,14 @@ class TextWidget extends StatelessWidget {
       this.color,
       this.size,
       this.fontWeight,
-      this.textAlign});
+      this.textAlign,
+      this.overflow});
   final String text;
   final Color? color;
   final double? size;
   final FontWeight? fontWeight;
   final TextAlign? textAlign;
+  final TextOverflow? overflow;
 
   @override
   Widget build(BuildContext context) {

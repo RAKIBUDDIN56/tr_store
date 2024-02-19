@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tr_store/app/app.dart';
+import 'package:tr_store/config/constansts/app_color.dart';
 import 'package:tr_store/utils/locator.dart';
 
 void main() {
@@ -15,7 +16,7 @@ Future initService() async {
   setupLocator();
   if (Platform.isAndroid) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
+      statusBarColor: AppColors.primary,
       statusBarBrightness: Brightness.dark,
     ));
   } else {

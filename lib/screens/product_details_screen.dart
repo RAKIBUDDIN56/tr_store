@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:tr_store/config/constansts/app_color.dart';
 import 'package:tr_store/config/routes/routes_location.dart';
 import 'package:tr_store/provider/cart_provider.dart';
+import 'package:tr_store/utils/extensions.dart';
 import 'package:tr_store/widgets/text_widget.dart';
 import 'package:tr_store/widgets/toast.dart';
 
@@ -25,11 +29,10 @@ class _ProductDetailsScrrenState extends State<ProductDetailsScrren> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.primary,
         centerTitle: true,
         title: const Text('Product Details'),
         actions: [
-          
           badge(context),
           const SizedBox(
             width: 20.0,
@@ -43,7 +46,7 @@ class _ProductDetailsScrrenState extends State<ProductDetailsScrren> {
   Consumer<CartProvider> body(int index) {
     return Consumer<CartProvider>(
         builder: (context, provider, child) => Padding(
-              padding: const EdgeInsets.all(4.0),
+              padding: const EdgeInsets.all(8.0),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -70,8 +73,16 @@ class _ProductDetailsScrrenState extends State<ProductDetailsScrren> {
                               const SizedBox(
                                 height: 5.0,
                               ),
-                              TextWidget(
-                                text: provider.products[index].title,
+                              Text(
+                                provider.products[index].title,
+                                textAlign: TextAlign.center,
+                                style:
+                                    context.textTheme.headlineSmall?.copyWith(
+                                  color: Colors.black87,
+                                  fontSize: 20.sp,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: GoogleFonts.dekko().fontFamily,
+                                ),
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,7 +106,8 @@ class _ProductDetailsScrrenState extends State<ProductDetailsScrren> {
                                   const Spacer(),
                                   OutlinedButton(
                                       style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors.white),
+                                        backgroundColor: AppColors.primary,
+                                      ),
                                       onPressed: () async {
                                         bool res =
                                             await provider.saveData(index);
@@ -134,7 +146,7 @@ class _ProductDetailsScrrenState extends State<ProductDetailsScrren> {
           return Text(
             value.getCounter().toString(),
             style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+                color: AppColors.primary, fontWeight: FontWeight.bold),
           );
         },
       ),

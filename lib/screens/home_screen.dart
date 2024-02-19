@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:tr_store/config/constansts/app_color.dart';
 import 'package:tr_store/config/routes/routes_location.dart';
 import 'package:tr_store/provider/cart_provider.dart';
 import 'package:tr_store/widgets/text_widget.dart';
@@ -31,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.primary,
         centerTitle: true,
         title: const Text('Product List'),
         actions: [
@@ -70,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         margin: const EdgeInsets.symmetric(vertical: 8),
                         height: 120,
                         child: Card(
-                          color: Colors.white,
+                          color: AppColors.primary,
                           elevation: 5.0,
                           child: Padding(
                             padding: const EdgeInsets.all(4.0),
@@ -128,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           OutlinedButton(
                                               style: ElevatedButton.styleFrom(
                                                   backgroundColor:
-                                                      Colors.white),
+                                                      AppColors.primary),
                                               onPressed: () async {
                                                 bool res = await provider
                                                     .saveData(index);
@@ -166,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
           return Text(
             value.getCounter().toString(),
             style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+                color: AppColors.primary, fontWeight: FontWeight.bold),
           );
         },
       ),
@@ -194,13 +195,13 @@ class ShimmerEffect extends StatelessWidget {
   ) {
     return Shimmer.fromColors(
       baseColor: Colors.grey,
-      highlightColor: Colors.white,
+      highlightColor: AppColors.primary,
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 8),
         height: 120,
         decoration: BoxDecoration(
             color: Colors.grey, borderRadius: BorderRadius.circular(8)),
-        child: const Card(color: Colors.white),
+        child: const Card(color: AppColors.primary,),
       ),
     );
   }

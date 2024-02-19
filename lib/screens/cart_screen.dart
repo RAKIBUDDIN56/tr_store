@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:tr_store/config/constansts/app_color.dart';
 import 'package:tr_store/data/db_helper.dart';
 import 'package:tr_store/data/models/cart_model.dart';
 import 'package:tr_store/provider/cart_provider.dart';
@@ -37,7 +38,7 @@ class _CartScreenState extends State<CartScreen> {
     final cart = Provider.of<CartProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.primary,
         centerTitle: true,
         title: const Text('My Shopping Cart'),
         actions: [
@@ -47,7 +48,7 @@ class _CartScreenState extends State<CartScreen> {
                 return Text(
                   value.getCounter().toString(),
                   style: const TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                      color: AppColors.primary, fontWeight: FontWeight.bold),
                 );
               },
             ),
@@ -81,7 +82,7 @@ class _CartScreenState extends State<CartScreen> {
                       itemCount: provider.cart.length,
                       itemBuilder: (context, index) {
                         return Card(
-                          color: Colors.white,
+                          color: AppColors.primary,
                           elevation: 5.0,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
