@@ -7,6 +7,7 @@ TR Store is a simple mobile app developer with Flutter. I used jsonplaceholder A
 - Flutter
 - Dart
 - sqflite
+- Provider
 - Clean Architecture
 
 ## Features
