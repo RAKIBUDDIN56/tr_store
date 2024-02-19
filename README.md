@@ -1,16 +1,26 @@
-# tr_store
+# TR Store 
 
-A new Flutter project.
+## Description
+TR Store is a simple mobile app developer with Flutter. I used jsonplaceholder API for fetching products.
 
-## Getting Started
+## Technology Used
+- Flutter
+- Dart
+- sqflite
+- Clean Architecture
 
-This project is a starting point for a Flutter application.
+## Features
+- Populating products from API with pagination [API by - https://www.jsonplaceholder.org]
+- HTTP response cache using sqflite
+- Add product to cart
+- Remove product from cart
 
-A few resources to get you started if this is your first Flutter project:
+  
+## Live
+https://drive.google.com/file/d/1FiVNl16AZEvZysh3WTe4lHbAjzTziAYn/view?usp=sharing
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+
+
